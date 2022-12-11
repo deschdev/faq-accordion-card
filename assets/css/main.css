@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ac68e9;
+}
+
+.content-container {
+  position: relative;
+  padding-top: 1em;
+}
+
+.content-container::after {
+  content: url("/assets/images/illustration-woman-online-mobile.svg");
+  position: absolute;
+  top: 2%;
+  right: 18%;
+  width: 65%;
+}
+
+.accordion-container {
+  width: 90%;
+  margin: 7em auto;
+  padding: 3em 1em;
+  border-radius: 25px;
+  background-color: #fff;
+  position: relative;
+  filter: drop-shadow(10px 50px 50px #492d61);
+
+}
+
+
+.accordion-container::after {
+  content: url("/assets/images/bg-pattern-mobile.svg");
+  position: absolute;
+  top: 1%;
+  right: 16%;
+}
+
+.accordion-container h1 {
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 0.5em;
+}
+
+.accordion-container .accordion-row {
+  border-bottom: 1px solid #f3f3f3;
+  padding: .3em;
+}
+
+.accordion-container .accordion-question {
+  position: relative;
+  text-align: left;
+}
+
+.accordion-container .accordion-question::after {
+  content: url("/assets/images/icon-arrow-down.svg");
+  position: absolute;
+  top: 0;
+  right: 1%;
+  transform: rotate(-90deg);
+  transition: all .2s ease-in-out;
+}
+
+.accordion-container .accordion-question.active::after {
+  content: url("/assets/images/icon-arrow-down.svg");
+  position: absolute;
+  top: 0;
+  right: 1%;
+  transform: rotate(0deg);
+  transition: all .2s ease-in-out;
+}
+
+.accordion-container .accordion-question h2 {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #7c7c7c;
+}
+
+.accordion-container .accordion-question.active h2 {
+  font-weight: 700;
+  color: #000;
+}
+
+.accordion-container .accordion-answer {
+  display: none;
+  max-height: 0;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.accordion-container .accordion-answer.active {
+  display: block;
+  max-height: 500px;
+  font-size: .9rem;
+  font-weight: 300;
+  color: #7c7c7c;
+  line-height: 1.2rem;
+}
