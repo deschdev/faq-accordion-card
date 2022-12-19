@@ -12,31 +12,38 @@ body {
   padding-top: 1em;
 }
 
-.content-container::after {
-  content: url("/assets/images/illustration-woman-online-mobile.svg");
-  position: absolute;
-  top: 2%;
-  right: 18%;
-  width: 65%;
-}
-
 .accordion-container {
   width: 90%;
   margin: 7em auto;
   padding: 3em 1em;
   border-radius: 25px;
   background-color: #fff;
-  position: relative;
   filter: drop-shadow(10px 50px 50px #492d61);
 
 }
 
+.accordion-container .accordion-mobile-images {
+  position: relative;
+}
 
-.accordion-container::after {
-  content: url("/assets/images/bg-pattern-mobile.svg");
+.accordion-container .accordion-mobile-images img {
   position: absolute;
-  top: 1%;
-  right: 16%;
+  max-width: 250px;
+  width: 100%;
+}
+
+.accordion-container .accordion-mobile-images .mobile-main-image {
+  left: 13%;
+  bottom: -27px;
+}
+
+.accordion-container .accordion-mobile-images .mobile-image-shadow {
+  left: 12%;
+  top: -50px;
+}
+
+.accordion-container .accordion-desktop-images {
+  display: none;
 }
 
 .accordion-container h1 {
@@ -47,7 +54,7 @@ body {
 
 .accordion-container .accordion-row {
   border-bottom: 1px solid #f3f3f3;
-  padding: .3em;
+  padding: .5em;
 }
 
 .accordion-container .accordion-question {
@@ -74,8 +81,8 @@ body {
 }
 
 .accordion-container .accordion-question h2 {
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: .8rem;
+  font-weight: 600;
   color: #7c7c7c;
 }
 
@@ -97,4 +104,57 @@ body {
   font-weight: 300;
   color: #7c7c7c;
   line-height: 1.2rem;
+}
+
+@media screen and (min-width: 769px) {
+
+  .accordion-container {
+    max-width: 100%;
+    width: 900px;
+    padding: 5em 1em;
+    overflow: hidden;
+  }
+
+  .accordion-container .accordion-mobile-images {
+    display: none;
+  }
+
+  .accordion-container .accordion-desktop-images {
+    position: relative;
+    display: block;
+  }
+
+  .accordion-container .accordion-desktop-images img {
+    position: absolute;
+  }
+
+  .accordion-container .accordion-desktop-images .desktop-main-image {
+    left: -70px;
+    top: 10px;
+    z-index: 2;
+  }
+
+  .accordion-container .accordion-desktop-images .desktop-image-shadow {
+    left: -65%;
+    top: -23em;
+    z-index: 1;
+  }
+
+  .accordion-container .accordion-text-content {
+    max-width: 400px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: 5%;
+  }
+
+  .accordion-container h1 {
+    margin-top: 0;
+    padding: 0;
+    text-align: left;
+  }
+
+  .accordion-container .accordion-row {
+    padding: 1em;
+  }
+
 }
