@@ -4,7 +4,8 @@
 }
 
 body {
-  background-color: #ac68e9;
+  background-image: linear-gradient(#ac68e9, #6963e7);
+  height: 100vh;
 }
 
 .content-container {
@@ -112,7 +113,14 @@ body {
     max-width: 100%;
     width: 900px;
     padding: 5em 1em;
-    overflow: hidden;
+  }
+
+  .accordion-container::before {
+    content: url("/assets/images/illustration-box-desktop.svg");
+    position: absolute;
+    top: 230px;
+    left: -106px;
+    z-index: 4;
   }
 
   .accordion-container .accordion-mobile-images {
@@ -129,13 +137,13 @@ body {
   }
 
   .accordion-container .accordion-desktop-images .desktop-main-image {
-    left: -70px;
+    left: -4.5em;
     top: 10px;
     z-index: 2;
   }
 
   .accordion-container .accordion-desktop-images .desktop-image-shadow {
-    left: -65%;
+    left: -36em;
     top: -23em;
     z-index: 1;
   }
