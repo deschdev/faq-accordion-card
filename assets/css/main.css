@@ -23,6 +23,14 @@ body {
 
 }
 
+.accordion-container .accordion-text-content {
+  padding: 0;
+}
+
+.accordion-container .accordion-text-content li {
+  list-style: none;
+}
+
 .accordion-container .accordion-mobile-images {
   position: relative;
 }
@@ -58,47 +66,49 @@ body {
   padding: .5em;
 }
 
-.accordion-container .accordion-question {
+/* removes the default down arrow  */
+
+summary {
+  display: block;
   position: relative;
   text-align: left;
 }
 
-.accordion-container .accordion-question::after {
+/* adds the custom default down arrow */
+
+summary::after {
   content: url("../images/icon-arrow-down.svg");
   position: absolute;
   top: 0;
   right: 1%;
   transform: rotate(-90deg);
   transition: all .2s ease-in-out;
+  cursor: pointer;
 }
 
-.accordion-container .accordion-question.active::after {
+details[open] summary::after {
   content: url("../images/icon-arrow-down.svg");
   position: absolute;
   top: 0;
   right: 1%;
   transform: rotate(0deg);
   transition: all .2s ease-in-out;
+  cursor: pointer;
 }
 
-.accordion-container .accordion-question h2 {
+.accordion-container summary h2 {
   font-size: .8rem;
   font-weight: 600;
   color: #7c7c7c;
+  cursor: pointer;
 }
 
-.accordion-container .accordion-question.active h2 {
+.accordion-container details[open] summary h2 {
   font-weight: 700;
   color: #000;
 }
 
-.accordion-container .accordion-answer {
-  display: none;
-  max-height: 0;
-  transition: max-height 0.5s ease-in-out;
-}
-
-.accordion-container .accordion-answer.active {
+.accordion-container details {
   display: block;
   max-height: 500px;
   font-size: .9rem;
@@ -162,7 +172,7 @@ body {
   }
 
   .accordion-container .accordion-row {
-    padding: 1em;
+    padding: 1em 0;
   }
 
 }
